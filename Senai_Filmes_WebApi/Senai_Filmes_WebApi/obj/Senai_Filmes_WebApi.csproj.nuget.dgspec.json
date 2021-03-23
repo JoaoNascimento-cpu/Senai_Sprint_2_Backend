@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jhony\\Documents\\Senai\\Senai_Sprint2\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi.csproj": {}
+    "C:\\Users\\jhony\\Documents\\Senai\\Senai_Sprint_2_Backend\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jhony\\Documents\\Senai\\Senai_Sprint2\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi.csproj": {
+    "C:\\Users\\jhony\\Documents\\Senai\\Senai_Sprint_2_Backend\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jhony\\Documents\\Senai\\Senai_Sprint2\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\jhony\\Documents\\Senai\\Senai_Sprint_2_Backend\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi.csproj",
         "projectName": "Senai_Filmes_WebApi",
-        "projectPath": "C:\\Users\\jhony\\Documents\\Senai\\Senai_Sprint2\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi.csproj",
+        "projectPath": "C:\\Users\\jhony\\Documents\\Senai\\Senai_Sprint_2_Backend\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi.csproj",
         "packagesPath": "C:\\Users\\jhony\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jhony\\Documents\\Senai\\Senai_Sprint2\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi\\obj\\",
+        "outputPath": "C:\\Users\\jhony\\Documents\\Senai\\Senai_Sprint_2_Backend\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
@@ -43,6 +43,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
