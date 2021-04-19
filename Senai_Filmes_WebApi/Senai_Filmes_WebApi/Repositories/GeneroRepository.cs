@@ -15,7 +15,7 @@ namespace Senai_Filmes_WebApi.Repositories
         /// Initial Catalog = BD
         /// User id = sa; pwd=Senai@132 = faz uma autenticacao com o usuario do SQL server, passando logon e a senha
         /// </summary>
-        private string stringConexao = "Data Source = LAPTOP-II7UP0KL; intial catalog = Filmes; user id = sa; pwd = Senai@132";
+        private string stringConexao = "Data Source = LAPTOP-II7UP0KL; initial catalog = Filmes; user id = sa; pwd = Senai@132";
         public void AtualizarIdCorpo(GeneroDomain genero)
         {
             throw new NotImplementedException();
