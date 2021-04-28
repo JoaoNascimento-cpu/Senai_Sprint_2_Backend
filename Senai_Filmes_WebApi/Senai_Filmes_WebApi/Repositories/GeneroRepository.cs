@@ -10,6 +10,7 @@ namespace Senai_Filmes_WebApi.Repositories
 {
     public class GeneroRepository : IGeneroRepository
     {
+
         /// <summary>
         /// Essa variavel é uma string de conexão com o banco de dados que recebe os parametros Data Source = Nome do servidor, 
         /// Initial Catalog = BD
@@ -25,21 +26,105 @@ namespace Senai_Filmes_WebApi.Repositories
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// Busca um gênero pelo seu id
+        /// </summary>
+        /// <param name="id">id do gênero que será buscado</param>
+        /// <returns>Um genero buscado do GeneroDomain ou Null caso não seja encontrado</returns>
         public GeneroDomain BuscarId(int id)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(stringConexao))
+            {
+                //declara a query que será executada
+                string querySelectById = "SELECT idGenero, Nome FROM Generos WHERE idGenero =  @id";
+
+                //abre a conexão com o banco de dados
+                con.Open();
+
+                //declara SqlDataReader reader para receber os valores mostrados no banco de dados
+                SqlDataReader reader;
+
+                using (SqlCommand command = new SqlCommand(querySelectById, con))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    //executa a query e armazena os dados do reader
+                    reader = command.ExecuteReader();
+
+                    //verificar se o resultado da query retornou algum registro
+                    if (reader.Read())
+                    {
+                        //se sim, instância um novo objeto generoBuscado do tipo GeneroDomain
+                        GeneroDomain generoBuscado = new GeneroDomain
+                        {
+                            idGenero = Convert.ToInt32(reader[0]);
+                        }
+                    }
+                }
+            
         }
 
+
+        /// <summary>
+        /// Cadastra um novo gênero de filmes
+        /// </summary>
+        /// <param name="novoGenero">Objeto novoGenero que irá armazenar as informações que serão cadastradas</param>
         public void Cadastrar(GeneroDomain novoGenero)
         {
-            throw new NotImplementedException();
+            //Declara a conexão passando a string de conexão como parâmetro
+            using (SqlConnection con = new SqlConnection(stringConexao))
+            {
+                //Declara a query que será executada
+                //INSERT INTO Generos(Nome) VALUES('Ficção Científica')";
+                //string queryInsert = "INSERT INTO Generos(Nome) VALUES ('" + novoGenero.nome + "')";
+                //não escrever dessa forma, pois dará problema 'Joana D' Arc, que permitirá a inserção de
+                //códigos SQL a partir do próprio Postman, que em mãos erradas, poderiam derrubar o próprio database 
+                //conhecido como SQL Injection
+                //nome: ('')DROP TABLE FILMES
+                //O código acima iria fazer uma tabela ser excluida, coisa que não seria uma boa ideia
+
+                //Declara a Query que está sendo executada
+                string queryInsert = "INSERT INTO Generos(Nome) VALUES(@Nome)";
+
+
+                //Declara o sqlCommand cmd passando a query que será executada e a conexão como parâmetros
+                using (SqlCommand cmd = new SqlCommand(queryInsert, con))
+                {
+                    //essa linha passa o valor para o parâmetro '@Nome'
+                    cmd.Parameters.AddWithValue("@Nome", novoGenero.nome);
+
+                    //Abre a conexão com o banco de dados
+                    con.Open();
+
+                    //executa a query
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
+        /// <summary>
+        /// Deleta o Gênero atrvés de seu id
+        /// </summary>
+        /// <param name="id">id do gênero que será deletado</param>
         public void Deletar(int id)
         {
-            throw new NotImplementedException();
+            //Declara o SqlConnection passando a string de conexão como parâmetro
+            using (SqlConnection con = new SqlConnection(stringConexao))
+            {
+                //Declara a query a ser execurtada passando o parâmetro @id
+                string queryDelete = "DELETE FROM Generos WHERE idgenero = @id";
+
+                using (SqlCommand cmd = new SqlCommand(queryDelete, con))
+                {
+                    //define o valor do id recebido no metodo como valor do parâmetro @id
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    con.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
+
         /// <summary>
         /// Lista todos os generos
         /// </summary>
@@ -75,17 +160,19 @@ namespace Senai_Filmes_WebApi.Repositories
                         {
                             //Atribui a  propriedade idGenero o valor da primeira coluna da tabela do BD
                             idGenero = Convert.ToInt32(reader[0]),
-                            
+
                             //Atribui a propriedade nome o valor da segunda coluna da tabela do BD
                             nome = reader[1].ToString()
                         };
                         //adiciona o objeto genero criado á lista listaGeneros
                         listaGeneros.Add(genero);
-                    } 
+                    }
                 }
             }
             //retorna o objeto listaGeneros
             return listaGeneros;
         }
+
+
     }
 }

@@ -43,6 +43,7 @@ namespace Senai_Filmes_WebApi.Controllers
         /// Esse endpoint lista todos os generos
         /// </summary>
         /// <returns>uma lusta de generos e um status code</returns>
+        /// http://localhost:5000/api/generos
         [HttpGet]
         public IActionResult Get() 
         {
@@ -50,6 +51,36 @@ namespace Senai_Filmes_WebApi.Controllers
             List<GeneroDomain> listaGeneros = _generoRepository.listarTodos();
             //retorna status code 200(OK) com a lista no formato json
             return Ok(listaGeneros);
+        }
+
+        /// <summary>
+        /// Cadastra um novo gênero
+        /// </summary>
+        /// <returns>status code 201 - Created</returns>
+        /// http://localhost:5000/api/generos
+        [HttpPost]
+        public IActionResult Post(GeneroDomain novoGenero) 
+        {
+            //faz uma chamada para o método cadastrar
+            _generoRepository.Cadastrar(novoGenero);
+
+                //retorna status code 201 - Created
+            return StatusCode(201);
+        }
+
+        /// <summary>
+        /// Deleta um Gênero existente
+        /// </summary>
+        /// <param name="id">id do gênero que será deletado</param>
+        /// <returns>Status Code 204 - No Content</returns>
+        //http://localhost:5000/api/generos/7
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id) 
+        {
+            _generoRepository.Deletar(id);
+
+            //Retorna Status Code 204 - No Content
+            return StatusCode(204);
         }
     }
 }
