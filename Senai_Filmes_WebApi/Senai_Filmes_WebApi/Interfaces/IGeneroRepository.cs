@@ -41,7 +41,7 @@ namespace Senai_Filmes_WebApi.Interfaces
         /// Atualiza o genero existente passando o id pelo URL da requisicao
         /// </summary>
         /// <param name="id">id do genero que sera atualizado</param>
-        /// <param name="">obejto genero com as novas informacoes</param>
+        /// <param name="genero">objeto genero com as novas informacoes</param>
         void AtualizarIdUrl(int id, GeneroDomain genero);
 
         /// <summary>
