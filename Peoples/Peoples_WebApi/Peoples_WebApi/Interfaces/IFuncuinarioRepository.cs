@@ -13,7 +13,9 @@ namespace Peoples_WebApi.Interfaces
         FuncionarioDomain BuscarPorId(int id);
 
         void Cadastrar(FuncionarioDomain novoFuncionario);
-        
-        void AtualizarIdCorpo
+
+        void Atualizar(int id, FuncionarioDomain funcionarioAtualizado);
+
+        void Delete(int id);
     }
 }
