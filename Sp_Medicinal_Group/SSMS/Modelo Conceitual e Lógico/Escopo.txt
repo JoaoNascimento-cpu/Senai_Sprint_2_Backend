@@ -1,0 +1,32 @@
+Perfis de Usuário:
+		.ADM
+		.Médico
+		.Paciente
+
+FUNCIONALIDADES:
+
+		Adm: 	.Poderá cadastrar  qualquer tipo de usuário
+			.Poderá agendar uma consulta, onte será informado o paciente, 
+			data de agendamento e qual médico irá atender
+			.Poderá cancelar o agendamento
+			.Deverá infomar os dados dada clínica
+			(endereço, horário de funcionamento,CNPJ,nome fantasia e razão social).
+
+		Médico:	
+			Poderá ver os agendamentos(consultas) associados a ele;
+			Médico poderá incluir a descrição da consulta que estará vinculada ao paciente
+			
+		Paciente:
+			Poderá vizualizar suas próprias consultas.
+
+
+MOBILE
+
+	Perfis de usuário:
+				Médico
+				Paciente
+
+	Funcionalidades:
+				Paciente: poderá vizualizar suas próprias consultas
+				Médico: poderá vizualizar as consultas associadas a ele
+

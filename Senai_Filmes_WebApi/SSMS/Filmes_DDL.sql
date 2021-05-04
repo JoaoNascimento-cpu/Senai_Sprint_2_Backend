@@ -1,0 +1,20 @@
+CREATE DATABASE Filmes;
+GO
+
+USE Filmes;
+GO
+
+CREATE TABLE Generos
+(
+	idGenero	INT PRIMARY KEY IDENTITY
+	,Nome		VARCHAR(200) NOT NULL -- NÃO NULO
+);
+GO
+
+CREATE TABLE Filmes
+(
+	idFilme		INT PRIMARY KEY IDENTITY
+	,idGenero	INT FOREIGN KEY REFERENCES Generos (idGenero)
+	,Titulo		VARCHAR(150) NOT NULL
+);
+GO
