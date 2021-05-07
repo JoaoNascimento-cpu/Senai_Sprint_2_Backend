@@ -14,9 +14,14 @@ namespace Peoples_WebApi.Domains
         public int idFuncionario { get; set; }
         [Required(ErrorMessage = "É nescessário o preenchimento do nome do funcionário")]
         public string nome { get; set; }
+
+
         [Required(ErrorMessage = "É nescessário o preenchimento do Sobrenome do Funcionário")]
+        [StringLength(15, MinimumLength = 5, ErrorMessage = "O sobrenome do funcionário deverá ter entre 5 e 15 caracteres")]
         public string sobrenome { get; set; }
-        [Required(ErrorMessage = "Envie a data de aniversário do funcionário")]
+
+
+        [Required(ErrorMessage = "Envie a data de nascimento do funcionário")]
         [DataType(DataType.Date)]
         public DateTime dataNascimento { get; set; }
     }

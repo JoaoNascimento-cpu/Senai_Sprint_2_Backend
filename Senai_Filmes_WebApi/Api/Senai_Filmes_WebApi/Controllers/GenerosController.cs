@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Senai_Filmes_WebApi.Domains;
 using Senai_Filmes_WebApi.Interfaces;
 using Senai_Filmes_WebApi.Repositories;
@@ -41,6 +42,8 @@ namespace Senai_Filmes_WebApi.Controllers
         /// </summary>
         /// <returns>uma lusta de generos e um status code</returns>
         /// http://localhost:5000/api/generos
+        /// o usuário deverá estar logado para listar todos os gêneros
+        [Authorize] //verifica se o usuário está logado
         [HttpGet]
         public IActionResult Get()
         {
@@ -56,6 +59,7 @@ namespace Senai_Filmes_WebApi.Controllers
         /// <param name="id">id do genero que sera buscado</param>
         /// <returns>Um genero buscado ou notFound caso nenhum genero senha buscado</returns>
         /// http://LocalHost:5000/api/generos
+         [Authorize(Roles = "administrador")] //somente um usuario adm poderá pegar o gênero pelo id
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {

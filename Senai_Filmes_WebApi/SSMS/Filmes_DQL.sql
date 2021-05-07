@@ -5,6 +5,12 @@ SELECT * FROM Generos;
 -- * = TUDO (ALL)
 SELECT * FROM Filmes;
 
+--Selecionamos todas as colunas da tabela Usuarios
+SELECT * FROM Usuarios;
+
+SELECT idUsuario, email, senha, permissao FROM Usuarios
+WHERE email = 'joao@gmail.com' AND senha = '123';
+
 -- listar todos os alugueis mostrando as datas de início e fim, 
 -- o nome do cliente que alugou e nome do modelo do carro
 -- INNER JOIN
