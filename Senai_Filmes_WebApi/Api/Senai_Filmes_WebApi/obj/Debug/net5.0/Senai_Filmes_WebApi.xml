@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Senai_Filmes_WebApi</name>
+    </assembly>
+    <members>
+        <member name="P:Senai_Filmes_WebApi.Controllers.GenerosController._generoRepository">
+            <summary>
+            O objeto generorepository irá receber todos os métodos definidops pela inteface GeneroRepository
+            </summary>
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Controllers.GenerosController.#ctor">
+            <summary>
+            instância o objeto _generoRepository para que haja as referencias aos metodos do repositorio
+            </summary>
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Controllers.GenerosController.Get">
+            <summary>
+            Esse endpoint lista todos os generos
+            </summary>
+            <returns>uma lusta de generos e um status code</returns>
+            http://localhost:5000/api/generos
+            o usuário deverá estar logado para listar todos os gêneros
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Controllers.GenerosController.GetById(System.Int32)">
+            <summary>
+            Busca um genero através de seu id
+            </summary>
+            <param name="id">id do genero que sera buscado</param>
+            <returns>Um genero buscado ou notFound caso nenhum genero senha buscado</returns>
+            http://LocalHost:5000/api/generos
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Controllers.GenerosController.PutIdUrl(System.Int32,Senai_Filmes_WebApi.Domains.GeneroDomain)">
+            <summary>
+            Atualiza genero existente
+            </summary>
+            <param name="id">id que será atualizado</param>
+            <param name="generoAtualizado">objeto generoAtualizado com as novas informações</param>
+            <returns>Status Code </returns>
+            http://LocalHost:500/api/generos/1
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Controllers.GenerosController.PutIdBody(Senai_Filmes_WebApi.Domains.GeneroDomain)">
+            <summary>
+            Atualiza um gênero existente passando suas informações pelo corpo
+            </summary>
+            <param name="generoAtualizado"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Controllers.GenerosController.Post(Senai_Filmes_WebApi.Domains.GeneroDomain)">
+            <summary>
+            Cadastra um novo gênero
+            </summary>
+            <returns>status code 201 - Created</returns>
+            http://localhost:5000/api/generos
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Controllers.GenerosController.Delete(System.Int32)">
+            <summary>
+            Deleta um Gênero existente
+            </summary>
+            <param name="id">id do gênero que será deletado</param>
+            <returns>Status Code 204 - No Content</returns>
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Controllers.UsuariosController.Login(Senai_Filmes_WebApi.Domains.UsuarioDomain)">
+            <summary>
+            método que irá procurar os dados fornecidos
+            </summary>
+            <param name="login"> objeto que irá receber o e-mail e senha do usuário</param>
+            <returns>Um Status Code e, em caso de sucesso, os dados do usuário buscado</returns>
+        </member>
+        <member name="T:Senai_Filmes_WebApi.Domains.FilmeDomain">
+            <summary>
+            Classe que representa a entidade/tabela Filmes
+            </summary>
+        </member>
+        <member name="T:Senai_Filmes_WebApi.Domains.GeneroDomain">
+            <summary>
+            Classe que representa a entidade/tabela Gêneros
+            </summary>
+        </member>
+        <member name="T:Senai_Filmes_WebApi.Domains.UsuarioDomain">
+            <summary>
+            Classe que representa a entidade (tabela) Usuarios no BD
+            </summary>
+        </member>
+        <member name="T:Senai_Filmes_WebApi.Interfaces.IGeneroRepository">
+            <summary>
+            Interface responsável pelo repositório Genero
+            </summary>
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Interfaces.IGeneroRepository.listarTodos">
+            <summary>
+            Esse método lista todos os generos
+            </summary>
+            <returns>Retorna lista de generos</returns>
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Interfaces.IGeneroRepository.BuscarId(System.Int32)">
+            <summary>
+            Busca um genero pelo id
+            </summary>
+            <param name="id">o id do genero que sera buscado</param>
+            <returns>retorna o objeto (genero) que foi buscado pelo id</returns>
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Interfaces.IGeneroRepository.Cadastrar(Senai_Filmes_WebApi.Domains.GeneroDomain)">
+            <summary>
+            este metodo cadastra um novo genero
+            </summary>
+            <param name="novoGenero">informacao que sera cadastrada</param>
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Interfaces.IGeneroRepository.AtualizarIdCorpo(Senai_Filmes_WebApi.Domains.GeneroDomain)">
+            <summary>
+            Esse metodo atualiza um genero existente  passando o id pelo corpo da requisicao
+            </summary>
+            <param name="genero">genero que sera atualizado com novas informacoes</param>
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Interfaces.IGeneroRepository.AtualizarIdUrl(System.Int32,Senai_Filmes_WebApi.Domains.GeneroDomain)">
+            <summary>
+            Atualiza o genero existente passando o id pelo URL da requisicao
+            </summary>
+            <param name="id">id do genero que sera atualizado</param>
+            <param name="genero">objeto genero com as novas informacoes</param>
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Interfaces.IGeneroRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um genero existente
+            </summary>
+            <param name="id">id do genero que sera deletado</param>
+        </member>
+        <member name="T:Senai_Filmes_WebApi.Interfaces.IUsuarioRepository">
+            <summary>
+            Interface responsável pelo UsuarioRepository
+            </summary>
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Interfaces.IUsuarioRepository.BuscarPorEmailSenha(System.String,System.String)">
+            <summary>
+            Esse método irá receber o email e senha do usuário pelo corpo
+            </summary>
+            <param name="email">e-mail do usuario</param>
+            <param name="senha">senha do usuario</param>
+            <returns>um objeto do tipo domain que foi buscado</returns>
+        </member>
+        <member name="F:Senai_Filmes_WebApi.Repositories.GeneroRepository.stringConexao">
+            <summary>
+            Essa variavel é uma string de conexão com o banco de dados que recebe os parametros Data Source = Nome do servidor, 
+            Initial Catalog = BD
+            User id = sa; pwd=Senai@132 = faz uma autenticacao com o usuario do SQL server, passando logon e a senha
+            </summary>
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Repositories.GeneroRepository.AtualizarIdCorpo(Senai_Filmes_WebApi.Domains.GeneroDomain)">
+            <summary>
+            Atualiza um gênero passando as novas informações pelo corpo
+            </summary>
+            <param name="genero">obejto genero que irá receber as novas informações</param>
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Repositories.GeneroRepository.AtualizarIdUrl(System.Int32,Senai_Filmes_WebApi.Domains.GeneroDomain)">
+            <summary>
+            Atualiza um genero passando o id pelo recurso(URL)
+            </summary>
+            <param name="id">id do genero que será atualizado</param>
+            <param name="genero">objeto genero com novas informações</param>
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Repositories.GeneroRepository.Cadastrar(Senai_Filmes_WebApi.Domains.GeneroDomain)">
+            <summary>
+            Busca um gênero pelo seu id
+            </summary>
+            <param name="id">id do gênero que será buscado</param>
+            <returns>Um genero buscado do GeneroDomain ou Null caso não seja encontrado</returns>
+            <summary>
+            Cadastra um novo gênero de filmes
+            </summary>
+            <param name="novoGenero">Objeto novoGenero que irá armazenar as informações que serão cadastradas</param>
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Repositories.GeneroRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta o Gênero atrvés de seu id
+            </summary>
+            <param name="id">id do gênero que será deletado</param>
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Repositories.GeneroRepository.listarTodos">
+            <summary>
+            Lista todos os generos
+            </summary>
+            <returns>Lista de generos</returns>
+        </member>
+        <member name="M:Senai_Filmes_WebApi.Repositories.UsuarioRepository.BuscarPorEmailSenha(System.String,System.String)">
+            <summary>
+            Esse método irá receber o email e senha do usuário pelo corpo
+            </summary>
+            <param name="email">e-mail do usuario</param>
+            <param name="senha">senha do usuario</param>
+            <returns>um objeto do tipo domain que foi buscado</returns>
+        </member>
+    </members>
+</doc>

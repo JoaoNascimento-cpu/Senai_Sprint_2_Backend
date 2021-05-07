@@ -65,3 +65,10 @@ C:\Users\jhony\Documents\Senai\Senai_Sprint_2_Backend\Senai_Filmes_WebApi\Api\Se
 C:\Users\jhony\Documents\Senai\Senai_Sprint_2_Backend\Senai_Filmes_WebApi\Api\Senai_Filmes_WebApi\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\jhony\Documents\Senai\Senai_Sprint_2_Backend\Senai_Filmes_WebApi\Api\Senai_Filmes_WebApi\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\jhony\Documents\Senai\Senai_Sprint_2_Backend\Senai_Filmes_WebApi\Api\Senai_Filmes_WebApi\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\jhony\Documents\Senai\Senai_Sprint_2_Backend\Senai_Filmes_WebApi\Api\Senai_Filmes_WebApi\bin\Debug\net5.0\Senai_Filmes_WebApi.xml
+C:\Users\jhony\Documents\Senai\Senai_Sprint_2_Backend\Senai_Filmes_WebApi\Api\Senai_Filmes_WebApi\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\jhony\Documents\Senai\Senai_Sprint_2_Backend\Senai_Filmes_WebApi\Api\Senai_Filmes_WebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\jhony\Documents\Senai\Senai_Sprint_2_Backend\Senai_Filmes_WebApi\Api\Senai_Filmes_WebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\jhony\Documents\Senai\Senai_Sprint_2_Backend\Senai_Filmes_WebApi\Api\Senai_Filmes_WebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\jhony\Documents\Senai\Senai_Sprint_2_Backend\Senai_Filmes_WebApi\Api\Senai_Filmes_WebApi\obj\Debug\net5.0\Senai_Filmes_WebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\jhony\Documents\Senai\Senai_Sprint_2_Backend\Senai_Filmes_WebApi\Api\Senai_Filmes_WebApi\obj\Debug\net5.0\Senai_Filmes_WebApi.xml
