@@ -8,6 +8,7 @@ SELECT * FROM Filmes;
 --Selecionamos todas as colunas da tabela Usuarios
 SELECT * FROM Usuarios;
 
+--busca um usuário através de seus respectivos dados
 SELECT idUsuario, email, senha, permissao FROM Usuarios
 WHERE email = 'joao@gmail.com' AND senha = '123';
 
