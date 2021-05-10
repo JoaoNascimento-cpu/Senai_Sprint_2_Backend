@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace HRoads_WebApi.Interfaces
 {
-    interface ITiposUsuario
+    public class ClassesHabilidadeRepository
     {
     }
 }

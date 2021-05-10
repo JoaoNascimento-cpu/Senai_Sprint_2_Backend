@@ -25,6 +25,7 @@ namespace HRoads_WebApi.Contexts
         public virtual DbSet<TiposHabilidade> TiposHabilidades { get; set; }
         public virtual DbSet<TiposUsuario> TiposUsuarios { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
+        public object TipoUsuarios { get; internal set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,6 +33,7 @@ namespace HRoads_WebApi.Contexts
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Data Source=LAPTOP-II7UP0KL; Initial Catalog=Senai_Hroads_Tarde; user Id=sa; pwd=Senai@132;");
+#pragma warning restore CS1030 // diretiva de #aviso
             }
         }
 
@@ -98,7 +100,7 @@ namespace HRoads_WebApi.Contexts
 
                 entity.Property(e => e.IdPersonagem).HasColumnName("idPersonagem");
 
-                entity.Property(e => e.DataAtt)
+                entity.Property(e => e.DataAt)
                     .IsRequired()
                     .HasMaxLength(20)
                     .IsUnicode(false);

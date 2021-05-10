@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace HRoads_WebApi.Interfaces
 {
-    interface IUsuario
+    interface IPersonagemRepository
     {
     }
 }
