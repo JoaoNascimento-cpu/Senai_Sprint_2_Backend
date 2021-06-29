@@ -1,5 +1,5 @@
 --Criação do DML do banco de dados 'Clinica'
-USE Clinica;
+USE SP_Medical_Group;
 GO
 
 --inserindo valores 'idClinica, nome fantasia, razão social, cnpj e endereço na tabela Clinica 
@@ -24,9 +24,9 @@ VALUES	(1,'ADM@spmedicinalgroup.com','12345'),
 GO
 
 --Inserção de valores da 'tabela paciente'
-INSERT INTO paciente(idUsuario,rg, cpf, telefone)
-VALUES	(4,'00.658.000-8', '000.000.000-00', '123456789'), 
-		(5,'00.000.000-0 ', '000.000.000-10', '987654321');
+INSERT INTO paciente(idUsuario,nomePaciente,rg, cpf, telefone)
+VALUES	(4,'João Nascimento','00.658.000-8', '000.000.000-00', '123456789'), 
+		(5,'Mateus Lemos','00.000.000-0 ', '000.000.000-10', '987654321');
 GO
 
 --Inserção de valores da tabela 'Situação' da consulta

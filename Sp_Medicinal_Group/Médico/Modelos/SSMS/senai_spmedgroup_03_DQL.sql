@@ -1,5 +1,5 @@
 --Criação do DQL do banco de dados da Clinica
-USE Clinica;
+USE SP_Medical_Group;
 GO
 --Selecionando todas as colunas da tabela 'clinica'
 SELECT * FROM clinica;
