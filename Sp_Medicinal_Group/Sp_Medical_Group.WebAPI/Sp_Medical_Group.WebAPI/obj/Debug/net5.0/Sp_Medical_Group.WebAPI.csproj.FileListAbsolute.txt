@@ -71,3 +71,5 @@ C:\Users\jhony\Documents\Senai\Senai_Sprint_2\Senai_Sprint_2_Backend\Sp_Medicina
 C:\Users\jhony\Documents\Senai\Senai_Sprint_2\Senai_Sprint_2_Backend\Sp_Medicinal_Group\Sp_Medical_Group.WebAPI\Sp_Medical_Group.WebAPI\obj\Debug\net5.0\ref\Sp_Medical_Group.WebAPI.dll
 C:\Users\jhony\Documents\Senai\Senai_Sprint_2\Senai_Sprint_2_Backend\Sp_Medicinal_Group\Sp_Medical_Group.WebAPI\Sp_Medical_Group.WebAPI\obj\Debug\net5.0\Sp_Medical_Group.WebAPI.pdb
 C:\Users\jhony\Documents\Senai\Senai_Sprint_2\Senai_Sprint_2_Backend\Sp_Medicinal_Group\Sp_Medical_Group.WebAPI\Sp_Medical_Group.WebAPI\obj\Debug\net5.0\Sp_Medical_Group.WebAPI.genruntimeconfig.cache
+C:\Users\jhony\Documents\Senai\Senai_Sprint_2\Senai_Sprint_2_Backend\Sp_Medicinal_Group\Sp_Medical_Group.WebAPI\Sp_Medical_Group.WebAPI\bin\Debug\net5.0\Sp_Medical_Group.WebAPI.xml
+C:\Users\jhony\Documents\Senai\Senai_Sprint_2\Senai_Sprint_2_Backend\Sp_Medicinal_Group\Sp_Medical_Group.WebAPI\Sp_Medical_Group.WebAPI\obj\Debug\net5.0\Sp_Medical_Group.WebAPI.xml

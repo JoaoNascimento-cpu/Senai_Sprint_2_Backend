@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sp_Medical_Group.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:Sp_Medical_Group.WebAPI.Interfaces.ITipoUsuarioRepository.Listar">
+            <summary>
+            método utilizado para a listagem de Tipos de usuários
+            </summary>
+            <returns>lista de tipos de usuários</returns>
+        </member>
+        <member name="M:Sp_Medical_Group.WebAPI.Interfaces.ITipoUsuarioRepository.BuscarPorId(System.Int32)">
+            <summary>
+            método utilizado para buscr um tipo de usuário existente
+            </summary>
+            <param name="id">id do tipo de usuário que irá passar pela url da requisição</param>
+            <returns>tipo de usuário buscado</returns>
+        </member>
+        <member name="M:Sp_Medical_Group.WebAPI.Interfaces.ITipoUsuarioRepository.Cadastro(Sp_Medical_Group.WebAPI.Domains.TipoUsuario)">
+            <summary>
+            método utilizado para cadastrar um novo tipo de usuário
+            </summary>
+            <param name="novoTipoUsuario">objeto que irá armazenar as informações do novo tipo de usuário cadastrado</param>
+        </member>
+        <member name="M:Sp_Medical_Group.WebAPI.Interfaces.ITipoUsuarioRepository.Atualizar(System.Int32,Sp_Medical_Group.WebAPI.Domains.TipoUsuario)">
+            <summary>
+            método utilizado para atualizar determinado usuário
+            </summary>
+            <param name="id">id do usuário buscado</param>
+            <param name="usuario">objeto que irá armazenar as novas informações do usuário</param>
+        </member>
+        <member name="M:Sp_Medical_Group.WebAPI.Interfaces.IUsuarioRepository.Listar">
+            <summary>
+            método utilizado para a listagem de usuários
+            </summary>
+            <returns>lista de usuários</returns>
+        </member>
+        <member name="M:Sp_Medical_Group.WebAPI.Interfaces.IUsuarioRepository.BuscarPorId(System.Int32)">
+            <summary>
+            método utilizado para buscr um usuário existente
+            </summary>
+            <param name="id">id do usuário que irá passar pela url da requisição</param>
+            <returns>usuário buscado</returns>
+        </member>
+        <member name="M:Sp_Medical_Group.WebAPI.Interfaces.IUsuarioRepository.Cadastro(Sp_Medical_Group.WebAPI.Domains.Usuario)">
+            <summary>
+            método utilizado para cadastrar um novo usuário
+            </summary>
+            <param name="NovoUsuario">objeto que irá armazenar as informações do novo usuário cadastrado</param>
+        </member>
+        <member name="M:Sp_Medical_Group.WebAPI.Interfaces.IUsuarioRepository.AtualizarUsuario(System.Int32,Sp_Medical_Group.WebAPI.Domains.Usuario)">
+            <summary>
+            método utilizado para atualizar determinado usuário
+            </summary>
+            <param name="id">id do usuário buscado</param>
+            <param name="usuario">objeto que irá armazenar as novas informações do usuário</param>
+        </member>
+    </members>
+</doc>

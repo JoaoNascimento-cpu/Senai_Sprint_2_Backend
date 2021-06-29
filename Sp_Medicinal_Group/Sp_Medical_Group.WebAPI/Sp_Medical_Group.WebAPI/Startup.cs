@@ -3,10 +3,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace Sp_Medical_Group.WebAPI
@@ -17,6 +21,7 @@ namespace Sp_Medical_Group.WebAPI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+
             services
                 .AddControllers()
                 .AddNewtonsoftJson(options =>
@@ -26,7 +31,54 @@ namespace Sp_Medical_Group.WebAPI
                     // Ignora valores nulos ao fazer junções nas consultas
                     options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
                 });
-        }
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sp_Medical_Group.WebAPI", Version = "v1" });
+
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
+
+            services
+                //Define a forma de atuenticação 'JwtBEarer'
+                .AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = "JwtBearer";
+                    options.DefaultChallengeScheme = "JwtBearer";
+                })
+
+                //Define os parametros e validação do token
+                .AddJwtBearer("JwtBearer", options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        //valida quem está emitindo
+                        ValidateIssuer = true,
+
+                        //valida quem está recebendo
+                        ValidateAudience = true,
+
+                        //valida o tempo de expiração
+                        ValidateLifetime = true,
+
+                        //forma criptografia e a chave de autenticação
+                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("SPMG-Usuario-autenticação")),
+
+                        //tempo de expiração do token
+                        ClockSkew = TimeSpan.FromMinutes(30),
+
+                        //nome do issuer, de onde está vindo
+                        ValidIssuer = "Sp_Medical_Group.WebAPI",
+
+                        //nome do audience, para onde está indo
+                        ValidAudience = "Sp_Medical_Group.WebAPI"
+                    };
+                });
+        
+    }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -37,6 +89,13 @@ namespace Sp_Medical_Group.WebAPI
             }
 
             app.UseRouting();
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseAuthentication();
 

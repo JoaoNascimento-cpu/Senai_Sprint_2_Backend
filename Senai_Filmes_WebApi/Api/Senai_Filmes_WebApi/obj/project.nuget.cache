@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nUnAe4wg/sCz4uFP1FUj37CfblIh1qwWyJGfIxPYs7P06fL3gdMQzadyEenjzTkD/+KrJr2uhiqGjCedFooIJA==",
+  "dgSpecHash": "RjaeAI27SsbfJ6QQhWuQEd0y0fkr0TRE1sxrgZgWJdMAC1b0hENsAMyiQNGW0vps4gFAb0xrrIVQwXGJIgMsKA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jhony\\Documents\\Senai\\Senai_Sprint_2_Backend\\Senai_Filmes_WebApi\\Api\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi.csproj",
+  "projectFilePath": "C:\\Users\\jhony\\Documents\\Senai\\Senai_Sprint_2\\Senai_Sprint_2_Backend\\Senai_Filmes_WebApi\\Api\\Senai_Filmes_WebApi\\Senai_Filmes_WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jhony\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.5\\microsoft.aspnetcore.authentication.jwtbearer.5.0.5.nupkg.sha512",
     "C:\\Users\\jhony\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -65,7 +65,7 @@ GO
 
 --Inserção de valores na table 'consulta'
 INSERT INTO consulta(idMedico, idPaciente, idSituacao, dataConsulta, descricao)
-VALUES	(1, 2, 2, 2021-03-11 19:00:00, 'Tratamento de gonorréia'),
-		(2, 1, 1, 2021-03-13 16:00:00, 'Tratamento de gripe'),
-		(1, 2, 3, 2021-03-12 17:00:00, 'Tratamento na coluna ');
+VALUES	(1, 2, 2, 2021-03-11-19-00-00, 'Tratamento de gonorréia'),
+		(2, 1, 1, 2021-03-13-16-00-00, 'Tratamento de gripe'),
+		(1, 2, 3, 2021-03-12-17-00-00, 'Tratamento na coluna ');
 GO 
