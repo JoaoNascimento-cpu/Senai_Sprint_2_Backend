@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Sp_Medical_Group.WebAPI.Domains;
 using Sp_Medical_Group.WebAPI.Interfaces;
@@ -23,9 +24,9 @@ namespace Sp_Medical_Group.WebAPI.Controllers
             consulta = new ConsultaRepository();
         }
 
+        [HttpGet("All")]
         
         //http://5000/api/Consulta
-        [HttpGet]
         public IActionResult Listar()
         {
             try
@@ -52,7 +53,6 @@ namespace Sp_Medical_Group.WebAPI.Controllers
             }
         }
 
-        
         [HttpGet("ConsultasUsuario")]
         public IActionResult UsuarioConsulta()
         {
@@ -84,7 +84,7 @@ namespace Sp_Medical_Group.WebAPI.Controllers
             }
         }
 
-        
+        [Authorize(Roles = "0")]
         [HttpGet("{id}")]
         public IActionResult BuscarId(int id)
         {
